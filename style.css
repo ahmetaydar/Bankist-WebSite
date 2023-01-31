@@ -607,3 +607,9 @@ h4 {
   font-size: 1.5rem;
   font-weight: 400;
 }
+
+.sticky {
+  opacity: 0.8;
+  position: fixed;
+  background-color: rgba(255, 255, 255, 0.3);
+}
