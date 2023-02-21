@@ -415,7 +415,6 @@ h4 {
   margin: 0;
 }
 .dots__dot--active {
-  /* background-color: #fff; */
   background-color: #888;
   opacity: 1;
 }
