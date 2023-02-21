@@ -38,34 +38,12 @@ document.addEventListener('keydown', function (e) {
 // Button Scrolling
 btnScrollTo.addEventListener('click', function (e) {
   const s1coords = section1.getBoundingClientRect();
-  // console.log(s1coords);
-
-  // console.log(
-  //   'height/width viewport',
-  //   document.documentElement.clientHeight,
-  //   document.documentElement.clientWidth
-  // );
-
-  // window.scrollTo({
-  //   left: s1coords.left + window.pageXOffset,
-  //   top: s1coords.top + window.pageYOffset,
-  //   behavior: 'smooth',
-  // });
 
   section1.scrollIntoView({ behavior: 'smooth' });
 });
 
 ///////////////////////////////////////
 //Page navigations
-// document.querySelectorAll('.nav__link').forEach(function (el) {
-//   el.addEventListener('click', function (e) {
-//     e.preventDefault();
-
-//     const id = this.getAttribute('href');
-//     console.log(id);
-//     document.querySelector(id).scrollIntoView({ behavior: 'smooth' });
-//   });
-// });
 
 // Event delegations 1.add event listener to common parent element
 //2 determine what element originated the event
@@ -81,41 +59,6 @@ document.querySelector('.nav__links').addEventListener('click', function (e) {
 });
 
 // Tabbed component
-
-///////////////////////////
-//DOM TRAVERSRY+
-// const h1 = document.querySelector('h1');
-// const h4 = document.querySelector('h4');
-
-// //going downwards : child
-// console.log(h1.querySelectorAll('.highlight'));
-// console.log(h1.childNodes);
-// console.log(h1.children);
-// h1.firstElementChild.style.color = 'white';
-// h1.lastElementChild.style.color = 'red';
-
-// //going upwards : parents
-
-// console.log(h1.parentNode);
-// console.log(h1.parentElement);
-
-// h1.closest('.header').style.background = 'var(--gradient-secondary)';
-
-// h1.closest('h1').style.background = 'var(--gradient-primary)';
-
-// // going sideways :siblings
-
-// console.log(h1.previousElementSibling);
-// console.log(h4.nextElementSibling);
-// console.log(h1.previousSibling);
-// console.log(h1.nextSibling);
-
-// console.log(h1.parentElement.children);
-// [...h1.parentElement.children].forEach(function (el) {
-//   if (el !== h1) el.style.transform = 'scale(0.5)';
-// });
-
-// tabs.forEach(t => t.addEventListener('click', () => console.log('tab'))); //slow
 
 tabsContainer.addEventListener('click', function (e) {
   const clicked = e.target.closest('.operations__tab');
@@ -166,28 +109,6 @@ nav.addEventListener('mouseout', handleHoVer.bind(1));
 
 //////////////////
 //sticky navigation
-
-// const initialCoords = section1.getBoundingClientRect();
-
-// window.addEventListener('scroll', function () {
-//   if (window.scrollY > initialCoords.top) nav.classList.add('sticky');
-//   else nav.classList.remove('sticky');
-// });
-
-////////sticky navgation Intesection Observer API
-
-// const obsCallback = function (entries, observer) {
-//   entries.forEach(entry => {
-//     console.log(entry);
-//   });
-// };
-// const obsOptions = {
-//   root: null,
-//   threshold: [0, 0.2],
-// };
-
-// const observer = new IntersectionObserver(obsCallback, obsOptions);
-// observer.observe(section1);
 
 const header = document.querySelector('.header');
 
@@ -338,28 +259,3 @@ const slider = function () {
   });
 };
 slider();
-
-////////////////////////////////7
-// rgb(255,255,255)
-// const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1));
-// const randomColor = () =>
-//   `rgb(${randomInt(0, 255)},${randomInt(0, 255)},${randomInt(0, 255)})`;
-
-// document.querySelector('.nav__link').addEventListener('click', function (e) {
-//   this.style.backgroundColor = randomColor();
-//   console.log('LINK', e.target, e.currentTarget);
-//   console.log(e.currentTarget === this);
-
-//   // Stop propagation
-//   // e.stopPropagation();
-// });
-
-// document.querySelector('.nav__links').addEventListener('click', function (e) {
-//   this.style.backgroundColor = randomColor();
-//   console.log('container', e.target, e.currentTarget);
-// });
-
-// document.querySelector('.nav').addEventListener('click', function (e) {
-//   this.style.backgroundColor = randomColor();
-//   console.log('nav', e.target, e.currentTarget);
-// });
